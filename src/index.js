@@ -12,9 +12,15 @@ class Datas {
             }
         })
 
-        console.log(res.data.result)
+       return res.data.data.results
     }
 }
 
 const data = new Datas()
-data.getAllData(URL)
+
+async function getDatas(url) {
+    const result = await data.getAllData(url)
+    console.log(result)
+}
+
+getDatas(URL)
