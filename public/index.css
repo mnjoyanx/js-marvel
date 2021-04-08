@@ -3,7 +3,9 @@
     --color-blue: #3199dc;
 }
 
-*, ::after, ::before {
+*,
+ ::after,
+ ::before {
     box-sizing: border-box;
 }
 
@@ -12,6 +14,7 @@ body {
     padding: 0;
     background-color: var(--color-dark);
     height: 200vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 * {

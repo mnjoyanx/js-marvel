@@ -1,0 +1,41 @@
+.movie-main {
+    width: 200px;
+    max-width: 200px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.movie-main h2 {
+    color: white;
+}
+
+.movies-general {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.each-item {
+    width: 250px !important;
+    background-color: white;
+    height: 400px;
+    max-height: 400px;
+    margin-bottom: 10px;
+}
+
+.body {
+    height: 200px;
+}
+
+.card-img {
+    height: 200px;
+    width: 250px;
+}
+
+.movies-title {
+    color: white;
+}

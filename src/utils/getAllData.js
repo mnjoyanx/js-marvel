@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {API_KEY} from '../constants/api'
+import { API_KEY } from '../constants/api'
 
 class Datas {
     async getAllData(url) {
@@ -10,13 +10,13 @@ class Datas {
                     apikey: API_KEY
                 }
             })
-    
-           return res.data.data.results
-        } catch(err) {
+
+            return res.data.data.results
+        } catch (err) {
             console.log(err.message)
             return false
         }
-        
+
     }
 }
 

@@ -2,7 +2,7 @@ import 'regenerator-runtime/runtime'
 
 
 // components 
-import {App} from './components/index'
+import { App } from './components/index'
 // components 
 
 
