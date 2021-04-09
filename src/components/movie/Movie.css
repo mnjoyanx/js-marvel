@@ -10,7 +10,7 @@
     color: white;
 }
 
-.movies-general {
+#main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

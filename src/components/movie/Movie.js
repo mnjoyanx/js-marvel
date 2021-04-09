@@ -1,20 +1,18 @@
 import { URL, URL_COMICS, URL_CHARACTERS } from '../../constants/api'
 import { getData } from '../../utils/getAllData'
+import CurrentMovie from '../curentMovie/CurrentMovie'
 
 import './Movie.css'
 
 
-function getPage() {
-    alert('ok')
-}
-
 class Movie {
     async render() {
         const result = await getData.getAllData(URL + URL_COMICS)
-        
-            const res = result.map(item => {
-                return `
-                    <div class="each-item">
+
+        const res = result.map(item => {
+            console.log(item)
+            return `
+                    <div class="each-item" data-id="${item.id}">
                         <img src="${item.thumbnail.path + '.' + item.thumbnail.extension}" class="card-img" alt="${item.title}">
                         <div class="body">
                             <h5 class="card-title">${item.title}</h5>
@@ -22,17 +20,23 @@ class Movie {
                         </div>
                     </div>
                 `
-            })
+        })
 
 
-         document.getElementById('main').innerHTML = res
+        document.getElementById('main').innerHTML = res
     }
 
-    eventListener() {
+    async eventListener() {
+        document.querySelectorAll('.each-item').forEach((item, idx) => {
+            item.addEventListener('click', async() => {
 
-         const elem = document.querySelectorAll('.each-item')
-         console.log(elem)
-         
+                const idx = item.dataset.id
+
+                const result = await getData.getAllData(URL + URL_COMICS + '/' + idx)
+                CurrentMovie.render(result)
+            })
+        })
+
     }
 
 }

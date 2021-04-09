@@ -2,9 +2,11 @@ import '/index.css'
 import Movie from '../movie/Movie'
 
 class App {
-    
-    render() {
-        Movie.render()
+
+    async render() {
+        await Movie.render()
+        Movie.eventListener()
+
     }
 }
 
