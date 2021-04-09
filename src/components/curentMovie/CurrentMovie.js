@@ -1,11 +1,15 @@
+import './CurrentMovie.css'
+
 class CurrentMovie {
     render(movie = []) {
+
         const alert = document.createElement('div')
         alert.classList.add('show__current-item')
 
         const result = movie.map(item => {
             return `
             <div class="currnet-item" >
+            <span class="close-modal">&#10799;</span>
             <img src="${item.thumbnail.path + '.' + item.thumbnail.extension}" class="card-img" alt="${item.title}">
             <div class="body">
                 <h5 class="card-title">${item.title}</h5>
@@ -15,10 +19,20 @@ class CurrentMovie {
             `
         })
 
-        // alert.innerHTML = result
 
-        const modal = document.getElementById('modal')
+        const modal = document.querySelector('.modal')
         modal.innerHTML = result
+
+        function closeModal() {
+            modal.classList.remove('hidden')
+            const closeModal = document.querySelector('.close-modal')
+            closeModal.addEventListener('click', () => {
+
+                modal.classList.add('hidden')
+            })
+        }
+
+        closeModal()
 
     }
 }

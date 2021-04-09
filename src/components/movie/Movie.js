@@ -10,7 +10,6 @@ class Movie {
         const result = await getData.getAllData(URL + URL_COMICS)
 
         const res = result.map(item => {
-            console.log(item)
             return `
                     <div class="each-item" data-id="${item.id}">
                         <img src="${item.thumbnail.path + '.' + item.thumbnail.extension}" class="card-img" alt="${item.title}">
@@ -26,14 +25,21 @@ class Movie {
         document.getElementById('main').innerHTML = res
     }
 
-    async eventListener() {
+     eventListener() {
+        const modal = document.querySelector('.modal')
+        
+
         document.querySelectorAll('.each-item').forEach((item, idx) => {
-            item.addEventListener('click', async() => {
+
+            item.addEventListener('click', async () => {
 
                 const idx = item.dataset.id
 
                 const result = await getData.getAllData(URL + URL_COMICS + '/' + idx)
+                modal.classList.add('showModal')
                 CurrentMovie.render(result)
+
+                
             })
         })
 

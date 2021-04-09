@@ -40,7 +40,8 @@ body {
     background-color: var(--color-dark);
 }
 
-#modal {
+.modal {
+    display: none;
     position: fixed;
     background-color: aliceblue;
     padding: 20px;
@@ -51,4 +52,12 @@ body {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+}
+
+.showModal {
+    display: block;
+}
+
+.hidden {
+    display: none
 }
