@@ -1,0 +1,9 @@
+.error-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    color: red;
+}

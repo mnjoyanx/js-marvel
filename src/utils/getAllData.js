@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { API_KEY } from '../constants/api'
+import Error from '../components/error/Error'
 
 class Datas {
     async getAllData(url) {
@@ -13,7 +14,7 @@ class Datas {
 
             return res.data.data.results
         } catch (err) {
-            console.log(err.message)
+            Error.render(err.message)
             return false
         }
 
